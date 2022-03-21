@@ -15,4 +15,11 @@ class Token extends Model
       'access_token',
       'refresh_token',
     ];
+
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
+    public function hasExpired(){
+        return now()->gte($this->updated_at->addSeconds($this->expires_in));
+    }
 }

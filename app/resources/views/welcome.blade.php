@@ -22,6 +22,7 @@
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     </head>
     <body class="antialiased">
+    @guest
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
             <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
                 <div class="text-center rounded-lg hover:text-red-500 hover:bg-white hover:cursor-pointer font-weight-bold hover:border-black-500 p-5 capitalize text-white bg-red-700">
@@ -29,5 +30,14 @@
                 </div>
             </div>
         </div>
+    @else
+        <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
+            <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
+                <div class="text-center rounded-lg hover:text-green-500 hover:bg-white hover:cursor-pointer font-weight-bold hover:border-black-500 p-5 capitalize text-white bg-green-700">
+                   <a href="{{route('sso.login')}}"> you are login via SSO </a>
+                </div>
+            </div>
+        </div>
+    @endguest
     </body>
 </html>

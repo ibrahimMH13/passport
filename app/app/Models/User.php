@@ -44,6 +44,6 @@ class User extends Authenticatable
 
     public function tokens()
     {
-        return $this->hasMany(Token::class);
+        return $this->hasOne(Token::class);
     }
 }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SSO\LoginController;
 use Illuminate\Support\Facades\Route;
 
@@ -14,10 +15,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [HomeController::class,'index'])->name('home')->middleware('refresh.token');
 
 Route::get("/sso",[LoginController::class,'index'])->name("sso.login");
 Route::get("sso/oauth/callback",[LoginController::class,'callback'])->name("sso.callback");
 Route::get("sso/oauth/authUser",[LoginController::class,'authUser'])->name("sso.user");
+Route::get("sso/oauth/refresh",[LoginController::class,'refresh'])->name("sso.refresh");
