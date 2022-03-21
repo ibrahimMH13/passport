@@ -28,9 +28,8 @@ class AuthServiceProvider extends ServiceProvider
         $this->registerPolicies();
         Passport::routes();
 
-        Passport::tokensExpireIn(now()->addDays(15));
+        Passport::tokensExpireIn(now()->addSeconds(20));
         Passport::refreshTokensExpireIn(now()->addDays(30));
-        Passport::personalAccessTokensExpireIn(now()->addMonths(6));
         Passport::tokensCan([
             'view-user' => 'you can see the users login'
         ]);
