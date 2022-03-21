@@ -1,0 +1,19 @@
+##
+#id
+Personal access client created successfully.
+Client ID: 95bfa689-10b6-420d-a043-c8858ede947c
+Client secret: NOvVHkkTcx6vBD473nQ9VSEw34dfvosi92vv90CB
+Password grant client created successfully.
+Client ID: 95bfa689-17eb-41be-bdf3-971eab3ed8f3
+Client secret: VnDQp37csTgtrXKn8xTyG7kStgUKPVQwFY4M0LDF
+#
+New client created successfully.
+Client ID: 95bfe0ab-186a-457d-b597-a6ede8d32b66
+Client secret: cmY4ngt56kxN27TvcyW2c4hpi5M15vCkUq8PhpkO
+#
+1-server::adding scope (view-user) and middleware into api route
+2-server::register middleware in kernel
+3-server::regisrer into passport
+4-client::add scope into authorization request
+5-client:: test re-authorization
+
